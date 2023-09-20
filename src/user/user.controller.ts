@@ -6,13 +6,7 @@ export class UserController {
     constructor(private userService: Userservice) {}
 
     add(username: string): User  {
-        if (!username) {
-            throw new Error("Le nom d'utilisateur ne peut pas être vide.");
-        }
 
-        if (username.trim() === '') {
-            throw new Error("Le nom d'utilisateur ne peut pas être composé uniquement d'espaces.");
-        }
         return this.userService.add(username);
     }
 
